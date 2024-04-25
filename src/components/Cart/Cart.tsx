@@ -40,14 +40,16 @@ const Cart = () => {
   const addOwnerItems = () => {
     console.log(1);
     const arr: CartItem[] = [];
-    cards.map((card: PropsCartProduct) => {
-      const item = {
-        id: Number(card.id),
-        price: Number(card.price),
-        count: Number(card.quantity),
-      };
-      arr.push(item);
+
+    cards.forEach((card: PropsCartProduct) => {
+        const item = {
+            id: Number(card.id),
+            price: Number(card.price),
+            count: Number(card.quantity),
+        };
+        arr.push(item);
     });
+
     setOrderItems(arr);
   };
 

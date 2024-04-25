@@ -12,8 +12,8 @@ const SearchWidget = () => {
   const dispatch = useDispatch();
 
   const handleClickWidget = () => {
-    isSearch ? setSearch(false) : setSearch(true);
-  };
+    setSearch(!isSearch)
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
