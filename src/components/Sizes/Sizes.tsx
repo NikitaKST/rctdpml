@@ -1,24 +1,21 @@
-import { PropsSize } from "../../types/SizeInterface";
-import Size from "./Size";
+import { PropsSize } from '../../types/SizeInterface';
+import Size from './Size';
 
 export interface PropsSizes {
-    list: PropsSize[],
+  list: PropsSize[];
 }
 
-const Sizes = ({list} : PropsSizes) => {
+const Sizes = ({ list }: PropsSizes) => {
+  return (
+    <>
+      <p>
+        Размеры в наличии:
+        {list.map(el => (
+          <Size key={el.size} item={el} />
+        ))}
+      </p>
+    </>
+  );
+};
 
-
-    return (
-      <>
-        <p>Размеры в наличии:
-          {
-           list.map(el => (
-              <Size key={el.size} item={el} />
-            ))
-          }
-        </p>
-      </>
-    )
-}
-
-export default Sizes; 
+export default Sizes;

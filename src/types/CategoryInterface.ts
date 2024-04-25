@@ -1,11 +1,11 @@
 interface PropsCategory {
-  id: number,
-  title: string,
-  selected: boolean,
+  id: number;
+  title: string;
+  selected: boolean;
 }
 
 interface PropsCategoryItem {
-  item: PropsCategory,
+  item: PropsCategory;
 }
 
-export type {PropsCategory, PropsCategoryItem};
+export type { PropsCategory, PropsCategoryItem };

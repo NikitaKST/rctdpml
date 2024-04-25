@@ -1,37 +1,46 @@
-import { useAppDispatch, useAppSelector } from "../../redux/redux-hook";
-import { changeSearch, fetchSearch, switchSearch } from "../../redux/slice/catalogSlice";
-import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from '../../redux/redux-hook';
+import {
+  changeSearch,
+  fetchSearch,
+  switchSearch,
+} from '../../redux/slice/catalogSlice';
+import { useEffect } from 'react';
 
 const Search = () => {
-    const dispatch = useAppDispatch();
-    const {search, statusSearch} = useAppSelector(state => state.catalog);
+  const dispatch = useAppDispatch();
+  const { search, statusSearch } = useAppSelector(state => state.catalog);
 
-    useEffect(() => {
-        if (statusSearch) {
-            dispatch(switchSearch(false));
-            dispatch(fetchSearch(search)); 
-        }
-    }, [statusSearch])
-    
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        dispatch(fetchSearch(search));
+  useEffect(() => {
+    if (statusSearch) {
+      dispatch(switchSearch(false));
+      dispatch(fetchSearch(search));
     }
+  }, [statusSearch]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(changeSearch(e.target.value))
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(fetchSearch(search));
+  };
 
-    const handleBlur = () => {
-        dispatch(changeSearch(''));
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeSearch(e.target.value));
+  };
 
-    return (
-        <form onSubmit={handleSubmit} className="catalog-search-form form-inline">
-            <input className="form-control" value={search} 
-            onChange={handleChange} onBlur={handleBlur} placeholder="Поиск"/>
-        </form>
-    )
-}
+  const handleBlur = () => {
+    dispatch(changeSearch(''));
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="catalog-search-form form-inline">
+      <input
+        className="form-control"
+        value={search}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        placeholder="Поиск"
+      />
+    </form>
+  );
+};
 
 export default Search;

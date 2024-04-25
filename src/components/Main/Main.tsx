@@ -1,13 +1,13 @@
-import Besselers from "../Bestsellers/Bestsellers";
-import Catalog from "../Catalog/Catalog";
+import Besselers from '../Bestsellers/Bestsellers';
+import Catalog from '../Catalog/Catalog';
 
 const Main = () => {
   return (
     <>
-    <Besselers />
-    <Catalog />
+      <Besselers />
+      <Catalog />
     </>
-  )
-}
+  );
+};
 
 export default Main;

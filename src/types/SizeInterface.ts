@@ -1,10 +1,10 @@
 interface PropsSize {
-  size: string,
-  available: boolean,
+  size: string;
+  available: boolean;
 }
 
 interface PropsSizeItem {
-  item: PropsSize,
+  item: PropsSize;
 }
 
-export type {PropsSize, PropsSizeItem}
+export type { PropsSize, PropsSizeItem };

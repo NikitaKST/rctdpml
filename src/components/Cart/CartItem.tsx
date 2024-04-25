@@ -1,5 +1,5 @@
 // const CartItem = () => {
-    
+
 //     interface PropsCartProduct {
 //         id: string,
 //         title: string,
@@ -16,9 +16,9 @@
 //     //     price: `${item.price} руб`,
 //     //     total: `${quantity * Number(item.price)} руб`
 //     //   }
-    
+
 //     return (
-      
+
 //     )
 // }
 

@@ -11,37 +11,44 @@ interface PropsProductItem {
 }
 
 interface AddProduct {
-  id: number,
-  length: number,
+  id: number;
+  length: number;
 }
 
 interface PropsCartProduct {
-  number: number,
-  id: string,
-  title: string,
-  size: string,
-  quantity: number,
-  price: string,
-  total: string,
+  number: number;
+  id: string;
+  title: string;
+  size: string;
+  quantity: number;
+  price: string;
+  total: string;
 }
 
 interface PropsCartProductItem {
-  item: PropsCartProduct,
+  item: PropsCartProduct;
 }
 
 interface CartItem {
-  id: number,
-  price: number,
-  count: number
+  id: number;
+  price: number;
+  count: number;
 }
 
 interface Order {
   owner: {
-    phone: string,
-    address: string
-  },
-  items: CartItem[],
+    phone: string;
+    address: string;
+  };
+  items: CartItem[];
 }
 
-export type {PropsProduct, PropsProductItem, AddProduct,
-  PropsCartProduct, PropsCartProductItem, CartItem, Order}
+export type {
+  PropsProduct,
+  PropsProductItem,
+  AddProduct,
+  PropsCartProduct,
+  PropsCartProductItem,
+  CartItem,
+  Order,
+};
